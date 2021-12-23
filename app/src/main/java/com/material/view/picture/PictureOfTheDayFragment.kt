@@ -21,7 +21,7 @@ import com.material.R
 import com.material.databinding.FragmentMainBinding
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.materiaL.view.picture.BottomNavigationDrawerFragment
+import com.material.view.picture.BottomNavigationDrawerFragment
 
 class PictureOfTheDayFragment : Fragment() {
 

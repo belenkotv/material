@@ -9,15 +9,35 @@ import com.material.view.chips.SettingsFragment
 import com.material.view.picture.PictureOfTheDayFragment
 import com.material.R
 
+class Parameters {
+
+    var resetFragment: Boolean = false
+    var theme: Int = R.style.Theme_Material
+
+    companion object {
+        @Volatile
+        private var INSTANCE: Parameters? = null
+        fun getInstance(): Parameters {
+            synchronized(this) {
+                var instance = INSTANCE
+                if (instance == null) {
+                    instance = Parameters()
+                    INSTANCE = instance
+                }
+                return instance
+            }
+        }
+    }
+
+}
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-       //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        // если во время исполнения то не забываем выполнить recreate()
+        setTheme(Parameters.getInstance().theme)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) {
+        if ((savedInstanceState == null) || Parameters.getInstance().resetFragment) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, PictureOfTheDayFragment.newInstance()).commit()
 //            supportFragmentManager.beginTransaction()
