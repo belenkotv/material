@@ -7,6 +7,7 @@ import android.view.*
 import androidx.appcompat.app.AppCompatDelegate
 import com.material.view.chips.SettingsFragment
 import com.material.view.picture.PictureOfTheDayFragment
+//import com.material.databinding.MainActivityBinding
 import com.material.R
 
 class Parameters {
@@ -43,7 +44,6 @@ class MainActivity : AppCompatActivity() {
 //            supportFragmentManager.beginTransaction()
 //                .replace(R.id.container, SettingsFragment.newInstance()).commit()
         }
-        //recreate()
     }
 
     private fun isConnecton(): Boolean {

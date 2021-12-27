@@ -11,6 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import java.lang.IllegalStateException
 
 class PictureOfTheDayViewModel(
     private val liveDataForViewToObserve: MutableLiveData<PictureOfTheDayState> = MutableLiveData(),
@@ -35,15 +36,15 @@ class PictureOfTheDayViewModel(
             call: Call<PictureOfTheDayResponseData>,
             response: Response<PictureOfTheDayResponseData>
         ) {
-            if(response.isSuccessful&&response.body()!=null){
+            if (response.isSuccessful&&response.body()!=null) {
                 liveDataForViewToObserve.value = PictureOfTheDayState.Success(response.body()!!)
-            }else{
-                //TODO("уловить ошибку")
+            } else {
+                liveDataForViewToObserve.value = PictureOfTheDayState.Error(IllegalStateException("Ошибка"))
             }
         }
 
         override fun onFailure(call: Call<PictureOfTheDayResponseData>, t: Throwable) {
-            //TODO("уловить ошибку")
+            liveDataForViewToObserve.value = PictureOfTheDayState.Error(IllegalStateException("onFailure"))
         }
 
     }
