@@ -14,10 +14,10 @@
     <color name="color_black">#070707</color>
 
     <color name="colorPrimary">#212121</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#2962FF</color>
+    <color name="colorPrimaryDark">#000000</color> 
+    <color name="colorAccent">#FFD81B60</color>
+    <color name="colorAccent40Alfa">#66D81B60</color>
     <color name="background">#FAFAFA</color>
-
 
     <color name="color_connected">#B200FF</color>
     <color name="color_disconnected">#FF0000</color>

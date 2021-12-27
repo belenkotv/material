@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/una23/AndroidStudioProjects/Material/app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.1" />
         <entry key="..\:/Users/una23/AndroidStudioProjects/Material/app/src/main/res/layout/activity_main.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/una23/AndroidStudioProjects/Material/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/una23/AndroidStudioProjects/Material/app/src/main/res/layout/fragment_earth.xml" value="0.1" />
         <entry key="..\:/Users/una23/AndroidStudioProjects/Material/app/src/main/res/layout/fragment_main.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/una23/AndroidStudioProjects/Material/app/src/main/res/layout/fragment_settings.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/una23/AndroidStudioProjects/Material/app/src/main/res/menu/menu_bottom_bar.xml" value="0.1" />
       </map>
     </option>
   </component>

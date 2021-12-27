@@ -14,6 +14,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.material.view.MainActivity
+import com.material.view.api.ApiActivity
+import com.material.view.api.ApiBottomActivity
 import com.material.view.chips.SettingsFragment
 import com.material.viewmodel.PictureOfTheDayState
 import com.material.viewmodel.PictureOfTheDayViewModel
@@ -84,7 +86,8 @@ class PictureOfTheDayFragment : Fragment() {
 
     private fun renderData(state: PictureOfTheDayState) {
         when (state) {
-            is PictureOfTheDayState.Error -> {//TODO(ДЗ)
+            is PictureOfTheDayState.Error -> {
+                state.error.message
             }
             is PictureOfTheDayState.Loading -> {
                 binding.imageView.load(R.drawable.ic_no_photo_vector)
@@ -123,7 +126,12 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
+            R.id.api_activity -> {
+                startActivity(Intent(requireContext(), ApiActivity::class.java))
+            }
+            R.id.api_bottom_activity -> {
+                startActivity(Intent(requireContext(),ApiBottomActivity::class.java))
+            }     
             R.id.app_bar_settings -> requireActivity().supportFragmentManager.beginTransaction()
                 .replace(
                     R.id.container,
